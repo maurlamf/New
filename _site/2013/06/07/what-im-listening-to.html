@@ -1,4 +1,75 @@
-<p>In no particular order:</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<!-- Loading Bootstrap -->
+	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Loading Flat UI -->
+	<link href="/css/flat-ui.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<script type="text/javascript" src="/js/twitterFetcher_v10_min.js"></script>
+	<style>
+		body {
+		}
+	</style>
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></sc\
+ript>
+<![endif]-->
+</head>
+
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">MAURRIVERA</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right" id = "mainnav">
+					<li class="active"><a href="/">HOME</a></li>
+					<li><a href="/about/">ABOUT</a></li>
+					<li><a href="/blog">BLOG</a></li>
+					<li><a href="/resume">RÉSUMÉ</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">MUSINGS <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+
+
+<div class="postspacer">
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			<h1>What I'm Listening To</h1>
+			<p><i>by Mauricio Rivera</i></p>
+			<p>In no particular order:</p>
 
 <ul>
 <li>Dillinger Escape Plan - One of Us is the Killer</li>
@@ -29,3 +100,205 @@
 
 <li><a href='https://itunes.apple.com/us/podcast/dan-carlins-hardcore-history/id173001861?mt=2&amp;v0=WWW-NAUS-ITUHOME-TOPPODCASTS&amp;ign-mpt=uo%3D2'>Dan Carlin&#8217;s Hardcore History Podcast</a></li>
 </ul>
+			<p class="light" align="right">—June 7, 2013</p>
+			</div>
+			<div class="col-md-5">
+				<div id="tweets1">
+				</div>
+			</div>
+		</div>
+			<script>
+      /*
+      * ### HOW TO CREATE A VALID ID TO USE: ###
+      * Go to www.twitter.com and sign in as normal, go to your settings page.
+      * Go to "Widgets" on the left hand side.
+      * Create a new widget for what you need eg "user timeline" or "search" etc. 
+      * Feel free to check "exclude replies" if you dont want replies in results.
+      * Now go back to settings page, and then go back to widgets page, you should
+      * see the widget you just created. Click edit.
+      * Now look at the URL in your web browser, you will see a long number like this:
+      * 345735908357048478
+      * Use this as your ID below instead!
+      */
+
+      /**
+       * How to use fetch function:
+       * @param {string} Your Twitter widget ID.
+       * @param {string} The ID of the DOM element you want to write results to. 
+       * @param {int} Optional - the maximum number of tweets you want returned. Must
+       *     be a number between 1 and 20.
+       * @param {boolean} Optional - set true if you want urls and hash
+             tags to be hyperlinked!
+       * @param {boolean} Optional - Set false if you dont want user photo /
+       *     name for tweet to show.
+       * @param {boolean} Optional - Set false if you dont want time of tweet
+       *     to show.
+       * @param {function/string} Optional - A function you can specify to format
+       *     tweet date/time however you like. This function takes a JavaScript date
+       *     as a parameter and returns a String representation of that date.
+       *     Alternatively you may specify the string 'default' to leave it with
+       *     Twitter's default renderings.
+       * @param {boolean} Optional - Show retweets or not. Set false to not show.
+       * @param {function/string} Optional - A function to call when data is ready. It
+       *     also passes the data to this function should you wish to manipulate it
+       *     yourself before outputting. If you specify this parameter you  must
+       *     output data yourself!
+       */
+
+      // ##### Simple example 1 #####
+      // A simple example to get my latest tweet and write to a HTML element with
+      // id "tweets". Also automatically hyperlinks URLS and user mentions and
+      // hashtags.
+      twitterFetcher.fetch('342086033795596288', 'tweets1', 3, true, false, true, dateFormatter, false);
+
+
+      // ##### Simple example 2 #####
+      // A simple example to get my latest 5 of my favourite tweets and write to a HTML
+      // element with id "talk". Also automatically hyperlinks URLS and user mentions and
+      // hashtags but does not display time of post.
+      twitterFetcher.fetch('342086033795596288', 'example2', 5, true, true, false);
+
+
+      // ##### Advanced example #####
+      // An advance example to get latest 5 posts using hashtag #API and write to a
+      // HTML element with id "tweets2" without showing user details and using a
+      // custom format to display the date/time of the post, and does not show
+      // retweets.
+      twitterFetcher.fetch('342086033795596288', 'example3', 3, true, false, true, dateFormatter, false);
+
+      // For advanced example which allows you to customize how tweet time is
+      // formatted you simply define a function which takes a JavaScript date as a
+      // parameter and returns a string!
+      // See http://www.w3schools.com/jsref/jsref_obj_date.asp for properties
+      // of a Date object.
+      function dateFormatter(date) {
+        return date.toTimeString();
+      }
+
+
+      // ##### Advanced example 2 #####
+      // Similar as previous, except this time we pass a custom function to render the
+      // tweets ourself! Useful if you need to know exactly when data has returned or
+      // if you need full control over the output.
+      twitterFetcher.fetch('342086033795596288', '', 3, true, true, true, '', false, handleTweets);
+
+      function handleTweets(tweets){
+          var x = tweets.length;
+          var n = 0;
+          var element = document.getElementById('example4');
+          var html = '<ul>';
+          while(n < x) {
+            html += '<li>' + tweets[n] + '</li>';
+            n++;
+          }
+          html += '</ul>';
+          element.innerHTML = html;
+      }
+    </script>
+		</div>
+	</div>
+</div>
+</div>
+
+    </div>
+    <!-- Load JS here for greater good =============================-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-select.js"></script>
+    <script src="/js/bootstrap-switch.js"></script>
+    <script src="/js/flatui-checkbox.js"></script>
+    <script src="/js/flatui-radio.js"></script>
+    <script src="/js/jquery.tagsinput.js"></script>
+    <script src="/js/jquery.placeholder.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+
+var $window = $(window); //You forgot this line in the above example
+
+$('section[data-type="background"]').each(function(){
+var $bgobj = $(this); // assigning the object
+$(window).scroll(function() {
+    var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+// Put together our final background position
+var coords = '50% '+ yPos + 'px';
+// Move the background
+$bgobj.css({ backgroundPosition: coords });
+});
+});
+});
+    </script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $('a[href=#top]').click(function(){
+                $('html, body').animate({scrollTop:0}, 'slow');
+                event.preventDefault();
+            });
+
+        });
+    </script>
+    
+    <script type="text/javascript">
+$(document).ready(function () {
+
+  // Set BaseURL
+  var baseURL = 'localhost:4000'
+
+  // Get current URL and replace baseURL
+  var href = window.location.href.replace(baseURL, '');
+
+  // Remove trailing slash
+  href = href.substr(-1) == '/' ? href.substr(0, href.length - 1) : href;
+
+  // Get last part of current URL
+  var page = href.substr(href.lastIndexOf('/') + 1);
+
+  // Add trailing slash if not empty (empty means we're currently at baseURL)
+  page = page != '' ? page + '/' : page;
+
+  // Select link based on href attribute and set it's closest 'li' to 'active'. 
+  // .siblings('.active').removeClass() is only needed if you have a default 'active li'.
+  $('a[href="' + baseURL + page + '"]', '#mainnav li').closest('li').addClass('active').siblings('.active').removeClass();
+
+});
+    </script>
+
+</body>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <a href="#top" class="topbutton">BACK TO TOP</a>
+                <div class="iconholder">
+                    <a href="http://www.linkedin.com/pub/mauricio-rivera/8/55b/836/">
+                        <i class="fa fa-linkedin-square"></i></a>
+                        <a href="http://www.twitter.com/maurrivera">
+                            <i class="fa fa-twitter-square"></i></a>
+                            <a href ="https://www.facebook.com/maurrivera">
+                                <i class="fa fa-facebook-square"></i></a>
+                                <a href="https://plus.google.com/116185961057288822467?rel=author">
+                                    <i class="fa fa-google-plus-square"></i></a>
+                                    <a href="https://github.com/maurlamf">
+                                        <i class="fa fa-github-square">
+                                        </i></a>
+                                        <a href="https://github.com/maurlamf">
+                                            <i class="fa fa-instagram"></i></a>
+                                        </div>
+                                        <p class ="foottext">Created by <a href="http://www.twitter.com/maurrivera">@maurrivera</a> w/ <a href="http://jekyllrb.com/">Jekyll</a>. Hosted by <a href="http://pages.github.com/">github pages</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        </html>
+
+
+
+
+

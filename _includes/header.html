@@ -6,11 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="{{ site.description }}">
 	<!-- Loading Bootstrap -->
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<!-- Loading Flat UI -->
-	<link href="css/flat-ui.css" rel="stylesheet">
+	<link href="/css/flat-ui.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<script type="text/javascript" src="/js/twitterFetcher_v10_min.js"></script>
 	<style>
 		body {
 		}
@@ -21,6 +23,7 @@
 ript>
 <![endif]-->
 </head>
+
 
 <body>
 
@@ -33,13 +36,14 @@ ript>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">MAURRIVERA</a>
+				<a class="navbar-brand" href="/">MAURRIVERA</a>
 			</div>
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">HOME</a></li>
-					<li><a href="#about">ABOUT</a></li>
-					<li><a href="#contact">CONTACT</a></li>
+				<ul class="nav navbar-nav navbar-right" id = "mainnav">
+					<li class="active"><a href="/">HOME</a></li>
+					<li><a href="/about/">ABOUT</a></li>
+					<li><a href="/blog">BLOG</a></li>
+					<li><a href="/resume">RÉSUMÉ</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">MUSINGS <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -56,3 +60,4 @@ ript>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
+

@@ -1,0 +1,94 @@
+---
+title: Hello World
+layout: home
+---
+<blockquote>
+  <p>This is El Poblado Commune in Medellíadksksndakladakdsklnalksdnsaklnn, Colombia shot in 2011. </p>
+</blockquote>
+
+{% for post in paginator.posts %}
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}	
+
+<div class="row-fluid">
+  <div class="span12">
+    <div class="pagination">
+      <ul>
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+          <li><a href="/">Prev</a></li>
+          {% else %}
+          <li><a href="/page{{ paginator.previous_page }}">Prev</a></li>
+          {% endif %}
+        {% else %}
+        <li><span class="disabled">Prev</span></li>
+        {% endif %}
+        {% if paginator.page == 1 %}
+        <li><span class="active">1</span></li>
+        {% else %}
+        <li><a href="/">1</a></li>
+        {% endif %}
+        {% for count in (2..paginator.total_pages) %}
+          {% if count == paginator.page %}
+          <li><span class="active">{{ count }}</span></li>
+          {% else %}
+          <li><a href="/page{{ count }}">{{ count }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if paginator.next_page %}
+        <li><a href="/page{{ paginator.next_page }}">Next</a></li>
+        {% else %}
+        <li><span class="disabled">Next</span></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3 id="hi">Hi!</h3>
+
+<p>My name is <strong>Mauricio Rivera</strong> and I'm a San Francisco native with interests in finance, technology, development, user interfaces, and sports.</p>
+
+<p><code>I recently moved to San Francisco!</code> </p>
+
+<p>I have worked on a number of cool projects. Most recently I worked at <a href="http://www.goldsilver.com">GoldSilver.com</a>, a global gold and silver dealership, where I ran technology, user interface, and finance teams. I have done work as a financial and technology consultant, and previously I worked at Loyola Marymount University. </p>
+
+<p>I graduated from UC Santa Barbara with a BA and Loyola Marymount University where I earned an MBA with dual emphases in Finance and Decision Science. I am also a <a href="http://www.cfainstitute.org">CFA</a> Charterholder.</p>
+
+<p>I'm interested in chess, sports, technology, numbers, films, and literature. Some of my favorite things are <a href="http://getpocket.com">Pocket</a>, the San Francisco Giants, Barça FC, USMNT, <a href="http://github.com">github</a>, the Golden State Warriors, the San Francisco 49ers, <a href="http://www.songza.com">Songza</a>, Neal Stephenson books, <a href="http://longnow.org/">the Long Now Foundation</a>, and Mexican food.</p>
+
+<h2 id="contact">Contact</h2>
+
+<p>Connect with me via social media or <a href="mailto:maurrivera@gmail.com">say hi</a> via email. </p>
+
+<hr />
+
+<h1 id="colophon">Colophon</h1>
+
+<p>This website was created on a MacBook Air with <a href="https://www.google.com/intl/en/chrome/browser/">Google Chrome</a> and <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. The site is published with <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. The sites are composed in Markdown.   </p>
+
+<p>The types are set in Lato and Roboto Condensed, both served by <a href="http://www.google.com/fonts/">Google Web Fonts</a>. </p>
+
+<p>| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |</p>
+
+<blockquote>
+  <p>Blockquotes are very handy in email to emulate reply text.
+  This line is part of the same quote.</p>
+</blockquote>
+
+<p>Quote break.</p>
+
+<blockquote>
+  <p>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote. </p>
+</blockquote>
+
